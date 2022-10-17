@@ -279,11 +279,11 @@ export class FrisbeeService {
     return of(this.data);
   }
 
-  loadFrisbee(id: string): Observable<Frisbee | undefined> {
+  loadFrisbee(id: string): Observable<Frisbee> {
     const idNumber = parseInt(id, 10);
     const frisbee = this.data.find((f) => f.id === idNumber);
 
-    return of(frisbee)
+    return frisbee ? of(frisbee) : of()
   }
 
   loadGroupedData(): Observable<SortedFrisbee[]> {
