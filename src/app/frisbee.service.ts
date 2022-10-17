@@ -241,8 +241,7 @@ export class FrisbeeService {
       rating: 4,
       category: "putter",
       price: 1599,
-      image:
-        "https://infinitediscs.com/Inf_Uploads/Disc_Images/DI_58d89d-daf5.JPG"
+      image: "https://infinitediscs.com/Inf_Uploads/Disc_Images/DI_425ea3-5b80.JPG"
     },
     {
       id: 17,

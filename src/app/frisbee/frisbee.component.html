@@ -5,7 +5,10 @@
     <mat-card-content>
         <p class="frisbee-description">{{ frisbee?.description }}</p>
         <div class="frisbee-image-container">
-            <img [src]="frisbee?.image" class="frisbee-image">
+            <img [src]="frisbee?.image" class="frisbee-image" alt="Image Coming Soon">
+        </div>
+        <div class="frisbee-price">
+            <span>{{ frisbee?.price | convertCents }}</span>
         </div>
     </mat-card-content>
 </mat-card>

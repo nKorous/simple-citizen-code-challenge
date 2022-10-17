@@ -11,7 +11,7 @@
 <div class="frisbee-detail-container" *ngIf="!hasErrors">
     <div class="frisbee-content">
         <div>
-            <h1>{{ frisbee?.name }} - {{ frisbee?.price }} <button mat-raised-button class="buy-now-button" (click)="buyNow()">Buy Now</button></h1>
+            <h1>{{ frisbee?.name }} - {{ frisbee?.price | convertCents }} <button mat-raised-button class="buy-now-button" (click)="buyNow()">Buy Now</button></h1>
             <h4>{{ frisbee?.description }}</h4>
         </div>
         <div class="image-and-content">
@@ -46,7 +46,7 @@
                 </table>
             </div>
             <div class="frisbee-image">
-                <img [src]="frisbee?.image">
+                <img [src]="frisbee?.image" alt="Image Coming Soon">
             </div>
         </div>
     </div>

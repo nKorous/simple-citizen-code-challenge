@@ -13,7 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
-import { FrisbeeComponent } from './frisbee/frisbee.component'
+import { FrisbeeComponent } from './frisbee/frisbee.component';
+import { ConvertCentsPipe } from './convert-cents.pipe'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FrisbeeComponent } from './frisbee/frisbee.component'
     FrisbeeListComponent,
     FrisbeeDetailComponent,
     TopbarComponent,
-    FrisbeeComponent
+    FrisbeeComponent,
+    ConvertCentsPipe
   ],
   imports: [
     BrowserModule,
