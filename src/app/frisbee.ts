@@ -1,3 +1,5 @@
+type FrisbeeCategory = "distance" | "fairway" | "midrange" | "putter";
+
 export interface Frisbee {
     id: number;
     name: string;
@@ -7,8 +9,14 @@ export interface Frisbee {
     turn: number;
     fade: number;
     rating: number;
-    category: "distance" | "fairway" | "midrange" | "putter";
+    category: FrisbeeCategory
     image: string;
     price: number;
   }
+
+  export interface SortedFrisbee {
+    category: FrisbeeCategory,
+    frisbees: Frisbee[]
+  }
+
   

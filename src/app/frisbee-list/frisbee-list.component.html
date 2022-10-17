@@ -1,1 +1,9 @@
-<p>frisbee-list works!</p>
+<div class="frisbee-list-container">
+    <div class="frisbee-group" *ngFor="let group of frisbees$ | async">
+        <h2>{{ group.category }}</h2>
+
+        <div class="group-content">
+            <app-frisbee *ngFor="let frisbee of group.frisbees" [frisbee]="frisbee" (click)="selectFrisbee(frisbee)"></app-frisbee>
+        </div>
+    </div>
+</div>

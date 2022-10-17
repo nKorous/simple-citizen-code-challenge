@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
-import { Frisbee } from './frisbee';
+import { Frisbee, SortedFrisbee } from './frisbee';
 
 @Injectable({
   providedIn: 'root'
@@ -285,5 +285,21 @@ export class FrisbeeService {
     const frisbee = this.data.find((f) => f.id === idNumber);
 
     return of(frisbee)
+  }
+
+  loadFilteredFrisbees(): Observable<SortedFrisbee[]> {
+    let sortedList: SortedFrisbee[] = []
+
+    this.data.forEach(disk => {
+      const index = sortedList.findIndex(fi => fi.category === disk.category)
+
+      if(index !== -1) {
+        sortedList[index].frisbees = [...sortedList[index].frisbees, disk]
+      } else {
+        sortedList = [...sortedList, { category: disk.category, frisbees: [{...disk}]}]
+      }
+    })
+
+    return of(sortedList)
   }
 }

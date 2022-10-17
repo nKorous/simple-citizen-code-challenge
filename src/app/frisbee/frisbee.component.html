@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ frisbee?.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="frisbee-description">{{ frisbee?.description }}</p>
+        <div class="frisbee-image-container">
+            <img [src]="frisbee?.image" class="frisbee-image">
+        </div>
+    </mat-card-content>
+</mat-card>

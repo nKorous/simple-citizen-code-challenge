@@ -1,0 +1,24 @@
+::ng-deep mat-card {
+    height: 400px;
+    width: 400px;
+    cursor: pointer;
+}
+
+::ng-deep mat-card:hover {
+    border: 1px solid orange;
+}
+
+.frisbee-description {
+    height: 130px;
+}
+
+.frisbee-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frisbee-image {
+    height: 200px;
+    width: 250px;
+}
