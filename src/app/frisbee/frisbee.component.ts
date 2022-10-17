@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Frisbee } from '../frisbee';
 
 @Component({
@@ -6,12 +6,6 @@ import { Frisbee } from '../frisbee';
   templateUrl: './frisbee.component.html',
   styleUrls: ['./frisbee.component.css']
 })
-export class FrisbeeComponent implements OnInit {
+export class FrisbeeComponent {
   @Input() frisbee: Frisbee | undefined
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

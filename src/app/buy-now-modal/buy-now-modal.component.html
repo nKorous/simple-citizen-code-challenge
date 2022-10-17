@@ -1,0 +1,26 @@
+<div class="buy-now-modal-container">
+    <div class="modal-header">
+        Add {{ frisbee.name }} To Cart
+    </div>
+
+    <div class="modal-content">
+        <p>How many would you like to add to the cart?</p>
+        
+        <div class="quantity">
+            <button mat-raised-button mat-icon-button (click)="decrementCounter()" class="remove-button"><mat-icon>remove</mat-icon></button>
+            <span>{{ counter | number }}</span>
+            <button mat-raised-button mat-icon-button (click)="incrementCounter()" class="add-button"><mat-icon>add</mat-icon></button>
+        </div>
+        
+        <div class="price-container">
+            Total: {{ total | currency: 'USD'}}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="modal-footer">
+        <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+    </div>
+</div>

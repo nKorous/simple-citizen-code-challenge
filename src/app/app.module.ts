@@ -7,14 +7,19 @@ import { FrisbeeListComponent } from './frisbee-list/frisbee-list.component';
 import { FrisbeeDetailComponent } from './frisbee-detail/frisbee-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopbarComponent } from './topbar/topbar.component';
+import { ConvertCentsPipe } from './convert-cents.pipe';
+import { BuyNowModalComponent } from './buy-now-modal/buy-now-modal.component'
+import { FrisbeeComponent } from './frisbee/frisbee.component';
 
 // Material Imports
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
-import { FrisbeeComponent } from './frisbee/frisbee.component';
-import { ConvertCentsPipe } from './convert-cents.pipe'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatMenuModule } from '@angular/material/menu';
+import { CartComponent } from './cart/cart.component'
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { ConvertCentsPipe } from './convert-cents.pipe'
     FrisbeeDetailComponent,
     TopbarComponent,
     FrisbeeComponent,
-    ConvertCentsPipe
+    ConvertCentsPipe,
+    BuyNowModalComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,8 @@ import { ConvertCentsPipe } from './convert-cents.pipe'
     MatCardModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

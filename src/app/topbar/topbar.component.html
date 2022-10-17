@@ -1,1 +1,21 @@
-<mat-toolbar color="primary"></mat-toolbar>
+<mat-toolbar color="primary">
+    <span style="flex: 1 1"></span>
+
+    <button mat-mini-fab color="accent" [matMenuTriggerFor]="menu">
+        <mat-icon>shopping_cart</mat-icon>
+        {{ cartCount | number }}
+    </button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <div class="menu-item" *ngFor="let item of cart">
+        <p mat-menu-item>{{ item.name }} - x{{ item.quantity }}: {{ item.quantity * item.basePrice | currency: 'USD' }}</p>
+    </div>
+
+    <hr *ngIf="cartCount > 0">
+
+    <div class="grand-total">
+        Grand Total: {{ grandTotal | currency: 'USD' }} <br />
+        <button *ngIf="cartCount > 0" mat-stroked-button class="view-cart-button" (click)="viewCart()">View Cart</button>
+    </div>
+</mat-menu>

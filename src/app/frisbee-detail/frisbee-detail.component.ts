@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { BuyNowModalComponent } from '../buy-now-modal/buy-now-modal.component';
+import { CartService } from '../cart.service';
 import { Frisbee } from '../frisbee';
 import { FrisbeeService } from '../frisbee.service';
 
@@ -18,7 +21,9 @@ export class FrisbeeDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private frisbeeService: FrisbeeService,
-    private router: Router
+    private router: Router,
+    private matDialog: MatDialog,
+    private cartService: CartService,
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +61,23 @@ export class FrisbeeDetailComponent implements OnInit {
   }
 
   buyNow() {
-    
+    const dialog = this.matDialog.open(BuyNowModalComponent, {
+      height: '30%',
+      width: '30%',
+      data: this.frisbee as Frisbee
+    })
+
+    dialog.afterClosed().subscribe(data => {
+      console.log(data)
+      if(data && data.quantity >= 1) {
+        this.cartService.addToCart({
+          id: data.frisbee.id,
+          name: data.frisbee.name,
+          quantity: data.quantity,
+          basePrice: (data.frisbee.price / 100)
+        })
+      }
+    })
   }
 
 }
