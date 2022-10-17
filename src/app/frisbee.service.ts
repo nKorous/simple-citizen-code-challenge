@@ -286,7 +286,7 @@ export class FrisbeeService {
     return of(frisbee)
   }
 
-  loadFilteredFrisbees(): Observable<SortedFrisbee[]> {
+  loadGroupedData(): Observable<SortedFrisbee[]> {
     let sortedList: SortedFrisbee[] = []
 
     this.data.forEach(disk => {

@@ -12,7 +12,7 @@ export class FrisbeeListComponent {
 
 
   get frisbees$() {
-    return this.frisbeeService.loadFilteredFrisbees()
+    return this.frisbeeService.loadGroupedData()
   }
 
   constructor(

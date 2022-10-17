@@ -7,7 +7,7 @@ export class ConvertCentsPipe implements PipeTransform {
 
   transform(value: number | undefined): string {
 
-    const price = value ? value / 100 : 0.00
+    const price = value !== undefined ? value / 100 : 0
 
     return `$${price}`
   }
