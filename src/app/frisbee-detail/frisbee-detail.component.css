@@ -1,0 +1,52 @@
+.button-container {
+    margin: 5px;
+}
+
+.error-container {
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.frisbee-detail-container {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+h4 {
+    width: 90%;
+}
+
+.buy-now-button {
+    background: green;
+    color: white;
+    vertical-align: middle;
+}
+
+.image-and-content {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 5px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .image-and-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+}
+
+.stats-table td {
+    padding: 5px;
+}
+
+.stats-table .header-td {
+    font-weight: 900;
+}

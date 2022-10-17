@@ -1,1 +1,53 @@
-<p>frisbee-detail works!</p>
+<div class="button-container">
+    <button mat-raised-button (click)="backToList()" color="accent">
+        <mat-icon>arrow_back</mat-icon>Back to List
+    </button>
+</div>
+
+<div class="error-container" *ngIf="hasErrors">
+    <p>OOPS! Looks like we've lost this one in a tree. Press the back button to go to the list and try again.</p>
+</div>
+
+<div class="frisbee-detail-container" *ngIf="!hasErrors">
+    <div class="frisbee-content">
+        <div>
+            <h1>{{ frisbee?.name }} - {{ frisbee?.price }} <button mat-raised-button class="buy-now-button" (click)="buyNow()">Buy Now</button></h1>
+            <h4>{{ frisbee?.description }}</h4>
+        </div>
+        <div class="image-and-content">
+            <div>
+                <table class="stats-table">
+                    <tbody>
+                        <tr>
+                            <td class="header-td">Category:</td>
+                            <td>{{ frisbee?.category | uppercase }}</td>
+                        </tr>
+                        <tr>
+                            <td class="header-td">Speed:</td>
+                            <td>{{ frisbee?.speed }}</td>
+                        </tr>
+                        <tr>
+                            <td class="header-td">Glide:</td>
+                            <td>{{ frisbee?.glide }}</td>
+                        </tr>
+                        <tr>
+                            <td class="header-td">Turn:</td>
+                            <td>{{ frisbee?.turn }}</td>
+                        </tr>
+                        <tr>
+                            <td class="header-td">Fade:</td>
+                            <td>{{ frisbee?.fade }}</td>
+                        </tr>
+                        <tr>
+                            <td class="header-td">Rating:</td>
+                            <td>{{ frisbee?.rating}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="frisbee-image">
+                <img [src]="frisbee?.image">
+            </div>
+        </div>
+    </div>
+</div>

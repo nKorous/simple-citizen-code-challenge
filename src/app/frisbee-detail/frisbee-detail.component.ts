@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Frisbee } from '../frisbee';
 import { FrisbeeService } from '../frisbee.service';
@@ -17,7 +17,8 @@ export class FrisbeeDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private frisbeeService: FrisbeeService
+    private frisbeeService: FrisbeeService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +49,14 @@ export class FrisbeeDetailComponent implements OnInit {
         }
 
       })
+  }
+
+  backToList() {
+    this.router.navigate(['frisbees'])
+  }
+
+  buyNow() {
+    
   }
 
 }
