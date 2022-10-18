@@ -7,3 +7,6 @@
         <app-cart-item *ngFor="let item of cartItems | async" [cartItem]="item"></app-cart-item>
     </div>
 </div>
+<div class="cart-footer">
+    Grand Total: {{ cartItemGrandTotal | currency: 'USD'}}
+</div>

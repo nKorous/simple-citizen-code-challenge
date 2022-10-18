@@ -16,6 +16,12 @@ export class CartComponent {
     return this.cartService.clientCart$.value.length
   }
 
+  get cartItemGrandTotal() {
+    return this.cartService.clientCart$.value.reduce((acc, cur) => {
+      return acc+= cur.basePrice * cur.quantity
+    }, 0)
+  }
+
   constructor(
     private cartService: CartService
   ) { }
