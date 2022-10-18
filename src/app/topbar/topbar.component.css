@@ -4,10 +4,6 @@ mat-toolbar {
     z-index: 99;
 }
 
-.menu-item {
-    padding: 10px;
-}
-
 .grand-total {
     text-align: center;
     vertical-align: middle;
