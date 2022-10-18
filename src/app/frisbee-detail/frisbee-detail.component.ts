@@ -68,13 +68,13 @@ export class FrisbeeDetailComponent implements OnInit {
     })
 
     dialog.afterClosed().subscribe(data => {
-      console.log(data)
       if(data && data.quantity >= 1) {
         this.cartService.addToCart({
           id: data.frisbee.id,
           name: data.frisbee.name,
           quantity: data.quantity,
-          basePrice: (data.frisbee.price / 100)
+          basePrice: (data.frisbee.price / 100),
+          image: data.frisbee.image
         })
       }
     })

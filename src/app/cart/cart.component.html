@@ -1,1 +1,9 @@
-<p>cart works!</p>
+<div class="cart-container">
+    <div class="no-cart-items" *ngIf="!cartItemLength">
+        No items in cart. Press the home button to go back to the list.
+    </div>
+
+    <div class="cart-item-list" *ngIf="cartItemLength">
+        <app-cart-item *ngFor="let item of cartItems | async" [cartItem]="item"></app-cart-item>
+    </div>
+</div>

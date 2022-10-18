@@ -1,0 +1,24 @@
+<div class="cart-item-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ cartItem.name }}</mat-card-title>
+            <mat-card-subtitle>Base Price: {{ cartItem.basePrice | currency: 'USD' }} X{{ cartItem.quantity | number }}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="card-item-image">
+                <img [src]="cartItem.image" alt="Image Coming Soon">
+            </div>
+            <div class="price-info">
+               {{ cartItem.name }} Total:  {{ cartItem.basePrice * cartItem.quantity | currency: 'USD'}}
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button (click)="remove()" color="warn" class="remove-item-button">
+                <mat-icon>delete</mat-icon>Remove
+            </button>
+        </mat-card-actions>
+
+    </mat-card>
+</div>

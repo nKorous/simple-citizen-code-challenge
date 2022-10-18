@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { CartItem } from './cart';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { CartItem } from './cart';
 export class CartService {
   private clientCartItems: CartItem[] = []
 
-  public clientCart$: Subject<CartItem[]> = new Subject<CartItem[]>()
+  public clientCart$: BehaviorSubject<CartItem[]> = new BehaviorSubject<CartItem[]>([])
 
   addToCart(item: CartItem) {
     const index = this.clientCartItems.findIndex(fi => fi.id === item.id)

@@ -1,0 +1,31 @@
+.cart-item-container mat-card {
+    height: 200px;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.card-item-image img{
+    height: 100px;
+    width: 125px;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.price-info {
+    font-size: 22px;
+    position: relative;
+    top: 35px;
+    left: 65px;
+}
+
+mat-card-actions {
+    text-align: right;
+}
+
+.remove-item-button {
+    position: relative;
+    bottom: 15px;
+}

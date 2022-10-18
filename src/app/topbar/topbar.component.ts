@@ -43,4 +43,8 @@ export class TopbarComponent implements OnInit {
     this.router.navigate(['cart'])
   }
 
+  goToList() {
+    this.router.navigate(['frisbees'])
+  }
+
 }
